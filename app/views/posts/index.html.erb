@@ -1,10 +1,28 @@
-<h1>All Posts</h1>
+<h1 class="page-title">All Posts</h1>
+<div class="row">
+<div class="col-sm-3 col-md-3">
+	<ul class="list-group">
+		<li class="list-group-item"><a href ="#">Link 1</a></li>
+		<li class="list-group-item"><a href ="#">Link 1</a></li>
+		<li class="list-group-item"><a href ="#">Link 1</a></li>
+		<li class="list-group-item"><a href ="#">Link 1</a></li>
+		<li class="list-group-item"><a href ="#">Link 1</a></li>
+	</ul>
+</div>
+<div class="posts-container col-sm-8 col-sm-offset-4 col-md-8 col-sm-offset-4">
 <% @posts.each do |post| %>
-  <div class="media">
+
+  <div class="media post-card">
     <div class="media-body">
       <h4 class="media-heading">
         <%= link_to post.title, post %>
       </h4>
+      <small>
+        submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
+        <%= post.comments.count %> Comments
+      </small>
     </div>
   </div>
 <% end %>
+</div>
+</div>

@@ -7,7 +7,7 @@ rand(4..10).times do
     email: Faker::Internet.email, 
     password: password, 
     password_confirmation: password)
-  u.skip_confirmation!
+  #u.skip_confirmation!
   u.save
 
   # Note: by calling `User.new` instead of `create`,
@@ -30,8 +30,8 @@ rand(4..10).times do
 end
 
 u = User.first
-u.skip_reconfirmation!
-u.update_attributes(email: 'stevebschofield@gmail.com.com', password: 'testpassword', password_confirmation: 'testpassword')
+#u.skip_reconfirmation!
+u.update_attributes(name: 'Steve Schofield', email: 'stevebschofield@gmail.com', password: 'testpassword', password_confirmation: 'testpassword')
 
 puts "Seed finished"
 puts "#{User.count} users created"

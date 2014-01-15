@@ -1,6 +1,18 @@
 @import "bootstrap";
 @import "colors";
 
+h1, h2, h3, h4 {
+	color: $nephritis;
+}
+
+a {
+	color: $midnightblue;
+	&:hover {
+		text-decoration: none;
+	}
+	
+}
+
 ul.nav {
   a {
   	color: $clouds;
@@ -43,4 +55,22 @@ ul.nav {
 
 .user-info {
   margin-top: 9px;
+}
+
+.page-title {
+	color: $nephritis;
+	margin-bottom: 40px;
+}
+
+.post-card {
+	border: 1px solid $concrete;
+	border-radius: 7px;
+	padding: 40px;
+	&:hover {
+		background-color: $clouds;
+	} 
+}
+
+.posts-container {
+	top: -230px;
 }
