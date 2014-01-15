@@ -1,1 +1,46 @@
 @import "bootstrap";
+@import "colors";
+
+ul.nav {
+  a {
+  	color: $clouds;
+  	&:hover {
+  		background-color: rgba(255,255,255, 0.15);
+  	}
+  }
+}
+
+.navbar-custom {
+	background-color: $midnightblue;
+	border-radius: 0px;
+}
+
+.navbar-brand {
+	padding: 5px 30px 5px 15px;
+	img {
+		height: 40px;
+	}
+}
+
+.jumbotron {
+	margin-top: 20px;
+	background: $clouds;
+	background-image: image-url('jumbo_main.png');
+	background-repeat: no-repeat;
+	background-position: 90% 40px;
+	background-size: 50%;
+	h2 {
+		width: 350px;
+	}
+	p:last-child {
+		margin-top: 80px;
+
+		a {
+			width: 300px;
+		}
+	}
+}
+
+.user-info {
+  margin-top: 9px;
+}
