@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "colors";
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Montserrat);
 
 h1, h2, h3, h4 {
 	color: $nephritis;
@@ -71,6 +72,29 @@ ul.nav {
 	} 
 }
 
+.strapline {
+	text-align: center;
+	padding: 20px 0 40px;
+	h2 {
+		font-style: italic;
+		font-family: 'Montserrat', helvetica, arial, sans-serif;
+	}
+}
+
+#licker {
+	position: absolute;
+	height: 600px;
+	width: 600px;
+	max-height: 600px;
+	top: 20%;
+	right: -1000px;
+	background: image-url('stickit_vectors.png');
+	background-repeat: no-repeat;
+	background-size: 600px 600px;
+	-webkit-transition: all 1.5s ease-in-out;
+	-moz-transition: all 1.5s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
 .posts-container {
-	top: -230px;
 }
