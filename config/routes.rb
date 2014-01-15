@@ -1,5 +1,6 @@
 Bloccit::Application.routes.draw do
   
+  
   as :user do 
     get '/register', to: 'devise/registrations#new', as: :register
     get '/login', to: 'devise/sessions#new', as: :login
@@ -14,8 +15,10 @@ Bloccit::Application.routes.draw do
     post "/login" => 'devise/sessions#create', as: :user_session
     delete "/logout" => 'devise/sessions#destroy', as: :destroy_user_session
   end
-  
- resources :posts
+
+ resources :topics do
+   resources :posts, except: [:index]
+ end
 
   match "about" => 'welcome#about', via: :get
   

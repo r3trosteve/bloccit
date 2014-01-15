@@ -1,4 +1,4 @@
-class PostsController < Devise::SessionsController
+class UsersController < Devise::SessionsController
 
 	private
 		def user_params
