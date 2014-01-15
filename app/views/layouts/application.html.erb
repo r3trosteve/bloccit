@@ -53,7 +53,11 @@
 
 
 
-       <% if flash[:notice] %>
+       
+
+
+    <div class="container">
+    <% if flash[:notice] %>
         <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <%= flash[:notice] %>
@@ -69,9 +73,6 @@
           <%= flash[:alert] %>
         </div>
       <% end %>
-
-
-    <div class="container">
       <%= yield %>
     </div>
 
