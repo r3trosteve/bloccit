@@ -7,6 +7,7 @@ gem 'pg'
 gem 'faker'
 gem 'devise'
 gem 'cancan'
+gem 'redcarpet'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
