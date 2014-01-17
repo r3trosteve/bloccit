@@ -7,7 +7,7 @@ rand(4..10).times do
     email: Faker::Internet.email, 
     password: password, 
     password_confirmation: password)
-  
+  u.skip_confirmation!  
   u.save
 
   # Create 15 topics
@@ -46,7 +46,7 @@ u = User.new(
   email: 'admin@example.com', 
   password: 'helloworld', 
   password_confirmation: 'helloworld')
-
+u.skip_confirmation!  
 u.save
 u.update_attribute(:role, 'admin')
 
@@ -55,7 +55,7 @@ u = User.new(
   email: 'moderator@example.com', 
   password: 'helloworld', 
   password_confirmation: 'helloworld')
-
+u.skip_confirmation!  
 u.save
 u.update_attribute(:role, 'moderator')
 
@@ -64,7 +64,7 @@ u = User.new(
   email: 'member@example.com', 
   password: 'helloworld', 
   password_confirmation: 'helloworld')
-
+u.skip_confirmation!  
 u.save
 
 puts "Seed finished"

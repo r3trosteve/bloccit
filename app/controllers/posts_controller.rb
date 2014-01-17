@@ -36,7 +36,7 @@ end
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize! :update, @post, message: "You need to own the post to edit it."
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(post_params)
       redirect_to [@topic, @post], notice: "Post was saved"
     else
       flash[:error] = "There was an error saving the post. Please try again."
