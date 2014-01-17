@@ -14,18 +14,15 @@
     <div class="controls">
       <%= f.text_field :title, placeholder: "Enter a catchy title" %>
     </div>
-  </div>
   <% end %>
   <%= control_group_tag(post.errors[:body]) do %>
     <%= f.label :body, class: 'control-label' %>
     <div class="controls">
       <%= f.text_area :body, rows: 12, placeholder: "Start talking, don't stop 'til you've had enough." %>
     </div>
-  </div>
   <% end %>
   <div class="control-group form-group">
     <div class="controls">
       <%= f.submit "Save", class: 'btn-success' %>
     </div>
-  </div>
 <% end %>
