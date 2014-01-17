@@ -9,8 +9,9 @@
 		  <h4 class="media-heading">
 		    <%= link_to (markdown post.title), [@topic, post] %>
 		  </h4>
+      <%= image_tag(post.image.thumb.url, :class=> "post-img") if post.image? %>
 		  <small>
-		    <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+		    <%= image_tag(post.user.avatar.tiny.url, :class=> "user-img user-img-small") if post.user.avatar? %>
         submitted <%= time_ago_in_words(post.created_at) %> ago by 
         <%= post.user.name %><br/>
         <%= post.comments.count %> Comments

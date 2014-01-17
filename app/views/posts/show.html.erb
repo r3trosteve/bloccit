@@ -2,7 +2,7 @@
   <div class="col-sm-8 col-md-8">
   	<h1><%= markdown @post.title %></h1>
   	<small>
-  	  <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
+  	  <%= image_tag(@post.user.avatar.tiny.url, :class=> "user-img user-img-small") if @post.user.avatar? %>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by 
       <%= @post.user.name %>
      </small>
@@ -10,6 +10,7 @@
   </div>
   <div class="col-sm-4 col-md-4">
     <% if can? :edit, @post %>
+    <%= image_tag(@post.image_url) if @post.image? %>
       <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-large btn-block' %>
     <% end %>
   </div>

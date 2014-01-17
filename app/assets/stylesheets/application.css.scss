@@ -21,6 +21,7 @@ a {
 ul.nav {
   a {
   	color: $clouds;
+  	display: inline-block;
   	&:hover {
   		background-color: rgba(255,255,255, 0.15);
   	}
@@ -37,6 +38,20 @@ ul.nav {
 	img {
 		height: 40px;
 	}
+}
+
+.user-img {
+	border-radius: 15px;
+}
+
+.user-img .edit-user {
+	display: inline-block;
+}
+
+div.controls.avatar-upload {
+	display: inline-block;
+	width: 20%;
+	margin: 30px 0 40px;
 }
 
 .jumbotron {
@@ -71,6 +86,7 @@ ul.nav {
 	border: 1px solid $concrete;
 	border-radius: 7px;
 	padding: 40px;
+	margin-bottom: 20px;
 	&:hover {
 		background-color: $clouds;
 	} 
