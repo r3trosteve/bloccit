@@ -1,3 +1,36 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hover {
+	display: inline-block !important;
+}
+
+.topic-title a {
+	display: none;
+}
+
+.post-card {
+	border: 1px solid $concrete;
+	border-radius: 7px;
+	padding: 60px;
+	margin-bottom: 20px;
+	position: relative;
+	&:hover {
+		background-color: $clouds;
+	} 
+	.media-body {
+		margin-left: 20%;
+	}
+	.postcard-footer {
+		position: absolute;
+		bottom: 10px;
+		right: 20px;
+	}
+	.post-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+}

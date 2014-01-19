@@ -1,33 +1,32 @@
 <div class="row">
   <div class="col-sm-8 col-md-8">
-  <h1><%= markdown @topic.name %></h1>
+  <h1 class="topic-title"><%= markdown @topic.name %>  <% if can? :update, @topic %>
+    <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-primary btn-mini', id: 'edit-topic-btn' %>
+  <% end %></h1>
     <p class="lead"><%= @topic.description %></p>
-    
-    <% @posts.each do |post| %>
-      <div class="media post-card">
-        <div class="media-body">
-		  <h4 class="media-heading">
-		    <%= link_to (markdown post.title), [@topic, post] %>
-		  </h4>
-      <%= image_tag(post.image.thumb.url, :class=> "post-img") if post.image? %>
-		  <small>
-		    <%= image_tag(post.user.avatar.tiny.url, :class=> "user-img user-img-small") if post.user.avatar? %>
-        submitted <%= time_ago_in_words(post.created_at) %> ago by 
-        <%= post.user.name %><br/>
-        <%= post.comments.count %> Comments
-		  </small>
-		</div>
-      </div>
-    <% end %>
     <% if can? :create, Post %>
       <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-large btn-success' %>
+    <% end %>
+    <% @posts.each do |post| %>
+      <div class="media post-card">
+      <%= image_tag(post.image.thumb.url, :class=> "post-img") if post.image? %>
+        <div class="media-body">
+    		  <h4 class="media-heading">
+    		    <%= link_to (markdown post.title), [@topic, post] %>
+    		  </h4>
+          
+		    </div>
+        <small class="postcard-footer">
+        <%= image_tag(post.user.avatar.tiny.url, :class=> "user-img user-img-small") if post.user.avatar? %>
+        submitted <%= time_ago_in_words(post.created_at) %> ago by 
+        <%= post.user.name %> | <%= post.comments.count %> Comments
+      </small>
+      </div>
     <% end %>
   </div>
   <%= will_paginate @posts %>
   <div class="col-sm-4 col-md-4">
-  <% if can? :update, @topic %>
-	  <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-primary btn-mini' %>
-  <% end %>
+  
   </div>
 </div>
 
