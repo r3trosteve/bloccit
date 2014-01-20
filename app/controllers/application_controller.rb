@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :avatar
     devise_parameter_sanitizer.for(:account_update) << :avatar
+    devise_parameter_sanitizer.for(:sign_up) << :provider
+    devise_parameter_sanitizer.for(:sign_up) << :uid
   end
 
   rescue_from CanCan::AccessDenied do |exception|
