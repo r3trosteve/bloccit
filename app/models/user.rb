@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
                          provider: auth.provider,
                          uid: auth.uid,
                          email: auth.info.email,
+                         avatar: auth.info.image,
                          password: pass,
                          password_confirmation: pass
                         )
