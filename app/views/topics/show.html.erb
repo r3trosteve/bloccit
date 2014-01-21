@@ -4,11 +4,13 @@
     <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-primary btn-mini', id: 'edit-topic-btn' %>
   <% end %></h1>
     <p class="lead"><%= @topic.description %></p>
-    <% if can? :create, Post %>
+    <div class="row">
+      <% if can? :create, Post %>
       <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-large btn-success' %>
     <% end %>
+    </div>
     <% @posts.each do |post| %>
-      <div class="media post-card">
+      <div class="media post-card col-sm-10 col-md-10">
       <%= image_tag(post.image.thumb.url, :class=> "post-img") if post.image? %>
         <div class="media-body">
     		  <h4 class="media-heading">
@@ -21,6 +23,11 @@
         submitted <%= time_ago_in_words(post.created_at) %> ago by 
         <%= post.user.name %> | <%= post.comments.count %> Comments
       </small>
+      </div>
+      <div class="col-sm-2 col-md-2">
+      <div class="vote-arrows-topic">
+        <%= render partial: 'votes/voter', locals: { topic: @topic, post: post } %>
+      </div>
       </div>
     <% end %>
   </div>

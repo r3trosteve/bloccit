@@ -2,7 +2,15 @@
 @import "colors";
 @import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Montserrat);
 @import "topics";
+@import "vote";
+@import "posts";
 @import "animate.min";
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
 
 body {
 	
@@ -142,7 +150,9 @@ input[type="password"]:focus, input[type="email"]:focus, input[type="text"]:focu
 		// box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 2px rgba(26, 188, 156,0.4);
 		outline: 0 none;
 	}
-
+.btn {
+	margin-right: 20px;
+}
 .btn-success {
 	background-color: $turquoise;
 	border: 1px solid $greensea;

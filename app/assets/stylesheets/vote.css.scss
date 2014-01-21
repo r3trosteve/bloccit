@@ -1,0 +1,25 @@
+// Place all the styles related to the vote controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.vote-arrows-post {
+	text-align: center;
+	font-size: 28px;
+	position: fixed;
+	left: 0;
+	top: 90px;
+	margin-left: -1px;
+	padding: 10px;
+	border: 1px solid $silver;
+	border-radius: 5px;
+}
+
+.vote-arrows-topic {
+	text-align: center;
+	font-size: 28px;
+	padding: 10px;
+	border: 1px solid $silver;
+	margin-top: 20px;
+	border-radius: 5px;
+}

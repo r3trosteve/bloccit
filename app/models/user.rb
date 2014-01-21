@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
+  has_many :votes, dependent: :destroy
 
   before_create :set_member
   mount_uploader :avatar, AvatarUploader
@@ -13,7 +14,7 @@ class User < ActiveRecord::Base
                          provider: auth.provider,
                          uid: auth.uid,
                          email: auth.info.email,
-                         avatar: auth.info.image,
+                         remote_avatar_url: auth[:info][:image],
                          password: pass,
                          password_confirmation: pass
                         )
