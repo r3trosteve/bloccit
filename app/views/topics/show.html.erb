@@ -9,27 +9,7 @@
       <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-large btn-success' %>
     <% end %>
     </div>
-    <% @posts.each do |post| %>
-      <div class="media post-card col-sm-10 col-md-10">
-      <%= image_tag(post.image.thumb.url, :class=> "post-img") if post.image? %>
-        <div class="media-body">
-    		  <h4 class="media-heading">
-    		    <%= link_to (markdown post.title), [@topic, post] %>
-    		  </h4>
-          
-		    </div>
-        <small class="postcard-footer">
-        <%= image_tag(post.user.avatar.tiny.url, :class=> "user-img user-img-small") if post.user.avatar? %>
-        submitted <%= time_ago_in_words(post.created_at) %> ago by 
-        <%= post.user.name %> | <%= post.comments.count %> Comments
-      </small>
-      </div>
-      <div class="col-sm-2 col-md-2">
-      <div class="vote-arrows-topic">
-        <%= render partial: 'votes/voter', locals: { topic: @topic, post: post } %>
-      </div>
-      </div>
-    <% end %>
+    <%= render @posts %>
   </div>
   <%= will_paginate @posts %>
   <div class="col-sm-4 col-md-4">

@@ -46,6 +46,26 @@ ul.nav {
 	}
 }
 
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	background-color: rgba(255,255,255,0.1);
+	border-color: transparent;
+}
+
+.dropdown-menu > li {
+	text-align: center;
+	> a {
+		text-align: center;
+		text-decoration: none;
+		color: $midnightblue;
+		background-color: transparent;
+		&:hover, &:focus {
+			color: $turquoise;
+		}
+	}
+}
+	
+	
+
 .user-img {
 	border-radius: 15px;
 }
