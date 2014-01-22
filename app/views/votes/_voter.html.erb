@@ -2,4 +2,8 @@
   <div><%= link_to " ", topic_post_up_vote_path(topic, post), class: 'glyphicon glyphicon-chevron-up' %></div>
   <div class="vote-count"><strong><%= post.points_total %></strong></div>
   <div><%= link_to " ", topic_post_down_vote_path(topic, post), class: 'glyphicon glyphicon-chevron-down' %></div>
+  <% else %>
+  <div><%= link_to " ", "#", class: 'glyphicon glyphicon-chevron-up' %></div>
+  <div class="vote-count"><strong><%= post.points_total %></strong></div>
+  <div><%= link_to " ", "#", class: 'glyphicon glyphicon-chevron-down' %></div>
 <% end %>
