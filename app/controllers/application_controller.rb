@@ -14,8 +14,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :avatar
     devise_parameter_sanitizer.for(:sign_up) << :provider
     devise_parameter_sanitizer.for(:sign_up) << :uid
-    devise_parameter_sanitizer.for(:sign_up) << :email_favourites
-    devise_parameter_sanitizer.for(:account_update) << :email_favourites
+    devise_parameter_sanitizer.for(:sign_up) << :email_favorites
+    devise_parameter_sanitizer.for(:account_update) << :email_favorites
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:name, :email, :password, :password_confirmation, :avatar, :provider, :uid, :email_favorites)
+    end
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:name, :email, :password, :password_confirmation, :avatar, :provider, :uid, :email_favorites)
+    end
   end
 
   rescue_from CanCan::AccessDenied do |exception|
