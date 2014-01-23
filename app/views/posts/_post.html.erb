@@ -2,7 +2,7 @@
 <%= image_tag(post.image.thumb.url, :class=> "post-img") if post.image? %>
   <div class="media-body">
     <h4 class="media-heading">
-      <%= link_to (markdown post.title), [post.topic, Post] %>
+      <%= link_to (markdown post.title), topic_post_path(post.topic, post) %>
     </h4>
     
   </div>

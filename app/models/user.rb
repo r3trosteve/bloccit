@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
     self.select('users.*'). # Select all attributes of the user
         select('COUNT(DISTINCT comments.id) AS comments_count'). # Count the comments made by the user
         select('COUNT(DISTINCT posts.id) AS posts_count'). # Count the posts made by the user
-        select('comments_count + posts_count AS rank'). # Another column where we add them together to sort
+#        select('comments_count + posts_count AS rank'). # Another column where we add them together to sort
+        select('COUNT(DISTINCT comments.id) + COUNT(DISTINCT posts.id) AS rank').
         joins(:posts). # Ties the posts table to the users table, via the user_id
         joins(:comments). # Ties the comments table to the users table, via the user_id
         group('users.id'). # Instructs the database to group the results so that each user will be returned in a distinct row
