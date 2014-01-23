@@ -2,7 +2,7 @@
 <%= image_tag(post.image.thumb.url, :class=> "post-img") if post.image? %>
   <div class="media-body">
     <h4 class="media-heading">
-      <%= link_to (markdown post.title), [post.topic, post] %>
+      <%= link_to (markdown post.title), [post.topic, Post] %>
     </h4>
     
   </div>
@@ -14,6 +14,6 @@
 </div>
 <div class="col-sm-2 col-md-2">
   <div class="vote-arrows-topic">
-    <%= render partial: 'votes/voter', locals: { topic: @topic, post: post } %>
+    <%= render partial: 'votes/voter', locals: { topic: post.topic, post: post } %>
   </div>
 </div>
