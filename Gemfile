@@ -18,6 +18,11 @@ gem 'will_paginate', '~> 3.0'
 gem 'omniauth-facebook'
 gem 'rails_12factor', group: :production
 
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'factory_girl_rails', '~> 4.0'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
