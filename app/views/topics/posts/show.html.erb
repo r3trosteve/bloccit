@@ -21,8 +21,9 @@
     <% end %>
     <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-1">
       <h3 class='js-comments-count'><%= @comments.count %> Comments</h3>
-      <%= render partial: 'comments/comment', collection: @comments, locals: { topic: @topic, post: @post } %>
-
+      <div class="js-comments">
+        <%= render partial: 'comments/comment', collection: @comments, locals: { topic: @topic, post: @post } %>
+      </div>
       <% if can? :create, Comment %>
       <hr/>
 
