@@ -9,7 +9,7 @@
 
 
 body {
-	
+	padding-top: 70px;
 }
 
 h1, h2, h3, h4 {
@@ -189,4 +189,28 @@ input[type="password"]:focus, input[type="email"]:focus, input[type="text"]:focu
 
 .gone {
 	display: none;
+}
+
+footer {
+	margin-top: 80px;
+	padding: 40px 0;
+	background-color: $clouds;
+	ul.nav li {
+		color: $midnightblue;
+			&:hover {
+				color: $turquoise;
+			}
+			&:last-child {
+				padding: 15px 10px;
+				color: $concrete;
+			}
+		a {
+			color: $midnightblue;
+			&:hover {
+				color: $turquoise;
+			
+			}
+		}
+	}
+	
 }
